@@ -11,8 +11,11 @@ function breweryLocation (lat,long) {
             brewList.append(brewName)
             brewName.addEventListener("click", () => {
                 let street = document.createElement("li")
+                let city = document.createElement("li")
                 street.textContent = brewerylist[i].street
+                city.textContent = brewerylist[i].city
                 brewName.appendChild(street)
+                brewName.appendChild(city)
             })
         }
     })
