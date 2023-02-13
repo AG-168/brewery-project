@@ -9,25 +9,24 @@ function breweryLocation (lat,long) {
             const brewList = document.querySelector('#brewery_list')
             brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
             brewList.append(brewName)
-            brewName.addEventListener("click", () => {
-                let street = document.createElement("li")
-                let city = document.createElement("li")
-                street.textContent = brewerylist[i].street
-                city.textContent = brewerylist[i].city
-                brewName.appendChild(street)
-                brewName.appendChild(city)
-            })
+            
         }
     })
 }
 
 let brewerylist
 
-// function addClickListener(brew) {
-//     brew.addEventListener("click", () => {
-        
-//     })
-// }
+function addClickListener(brew) {
+    brewName.addEventListener("click", () => {
+        let street = document.createElement("li")
+        let city = document.createElement("li")
+        street.textContent = brewerylist[i].street
+        city.textContent = brewerylist[i].city
+        brewName.appendChild(street)
+        brewName.appendChild(city)
+        street.innerHTML = ''
+    })
+}
 
 function querylocation (locationInput) {
     fetch(`https://nominatim.openstreetmap.org/search?q=${locationInput}&format=json&limit=1`)
