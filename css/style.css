@@ -29,3 +29,7 @@ div#breweries_details {
     text-align: center;
     color: white;
 }
+
+ul#brewery_list {
+    list-style: none;
+}
