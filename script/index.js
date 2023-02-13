@@ -34,16 +34,17 @@ searchForm.addEventListener('submit', (e)=>{
     e.target.reset()
 })
 
+let brewList = document.querySelector("#brewery_list")
+let address = document.createElement("li")
+let city = document.createElement("li")
+let state = document.createElement("li")
+let website = document.createElement("li")
+
 brewName.addEventListener("click", () => {
-    let brewList = document.querySelector("#brewery_list")
-    let p1 = document.createElement("p")
-    let p2 = document.createElement("p")
-    let p3 = document.createElement("p")
-    let p4 = document.createElement("p")
-    p1.textContent = data.street
-    p2.textContent = data.city
-    p3.textContent = `${data.state}, ${data.country}`
-    p4.textContent = data.website_url
-    brewList.appendChild(p1, p2, p3, p4)
+    address.textContent = data.street
+    city.textContent = data.city
+    state.textContent = `${data.state}, ${data.country}`
+    website.textContent = data.website_url
+    brewList.appendChild(li1, city, state, website)
 })
 
