@@ -2,12 +2,29 @@ function breweryLocation (lat,long) {
     fetch(`https://api.openbrewerydb.org/breweries?by_dist=${lat},${long}&per_page=5`)
     .then(res => res.json())
     .then(places => {
-        lat2 = places[0].latitude
-        lon2 = places[0].longitude
+        brewerylist=places
+        for (let i = 0; i < brewerylist.length; i++) {
+            const brewName = document.createElement("li")
+            const brewdistance = distance(lat1, lon1, brewerylist[i]['latitude'], brewerylist[i]['longitude'], "K").toFixed(2)
+            const brewList = document.querySelector('#brewery_list')
+            brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
+            brewList.append(brewName)
+            brewName.addEventListener("click", () => {
+                let street = document.createElement("li")
+                street.textContent = brewerylist[i].street
+                brewName.appendChild(street)
+            })
+        }
     })
 }
 
 let brewerylist
+
+// function addClickListener(brew) {
+//     brew.addEventListener("click", () => {
+        
+//     })
+// }
 
 function querylocation (locationInput) {
     fetch(`https://nominatim.openstreetmap.org/search?q=${locationInput}&format=json&limit=1`)
@@ -36,8 +53,6 @@ searchForm.addEventListener('submit', (e)=>{
 })
 
 
-
-
 function distance(lat1, lon1, lat2, lon2, unit) {
     if ((lat1 == lat2) && (lon1 == lon2)) {
         return 0;
@@ -58,7 +73,6 @@ function distance(lat1, lon1, lat2, lon2, unit) {
         return dist*0.621371;
     }
 }
-
 
 
 
