@@ -41,10 +41,10 @@ let state = document.createElement("li")
 let website = document.createElement("li")
 
 brewName.addEventListener("click", () => {
-    address.textContent = data.street
-    city.textContent = data.city
-    state.textContent = `${data.state}, ${data.country}`
-    website.textContent = data.website_url
+    address.textContent = places.street
+    city.textContent = places.city
+    state.textContent = `${places.state}, ${places.country}`
+    website.textContent = places.website_url
     brewList.appendChild(li1, city, state, website)
 })
 
