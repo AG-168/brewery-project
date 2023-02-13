@@ -10,9 +10,6 @@ function breweryLocation (lat,long) {
             brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
             brewList.append(brewName)
             //console.log(brewList)
-            brewName.addEventListener('click', (e)=>{
-                
-            })
         }
         //console.log(brewerylist)
     })
