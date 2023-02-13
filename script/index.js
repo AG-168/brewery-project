@@ -9,6 +9,11 @@ function breweryLocation (lat,long) {
             const brewList = document.querySelector('#brewery_list')
             brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
             brewList.append(brewName)
+            brewName.addEventListener('click', (e)=>{
+                addClickListener(brewerylist[i])
+
+            })
+            //console.log(brewerylist[i])
         }
         console.log(brewerylist)
     })
@@ -16,16 +21,18 @@ function breweryLocation (lat,long) {
 
 let brewerylist
 
+const breweryDetail = document.querySelector("#brewery_click_details")
+let street = document.querySelector("#street")
+let website = document.querySelector("#website")
+let type = document.querySelector("#type")
+
 function addClickListener(brew) {
-    brewName.addEventListener("click", () => {
-        let street = document.createElement("li")
-        let city = document.createElement("li")
-        street.textContent = brewerylist[i].street
-        city.textContent = brewerylist[i].city
-        brewName.appendChild(street)
-        brewName.appendChild(city)
-        street.innerHTML = ''
-    })
+    street.innerHTML = ''
+    website.innerHTML = ''
+    type.innerHTML = ''
+    street.textContent = brew.street
+    website.textContent = brew.website_url
+    type.textContent = brew.brewery_type
 }
 
 function querylocation (locationInput) {
