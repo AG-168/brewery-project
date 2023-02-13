@@ -13,7 +13,7 @@ function querylocation (locationInput) {
     fetch(`https://nominatim.openstreetmap.org/search?q=${locationInput}&format=json&limit=1`)
     .then(res=>res.json())
     .then(data=>{
-        //console.log(data) 
+        // console.log(data) 
         lat1 = data[0].lat
         lon1 = data[0].lon
         breweryLocation(lat1,lon1)
