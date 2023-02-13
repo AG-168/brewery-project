@@ -8,27 +8,27 @@
     <title>Beernoculars</title>
 </head>
 <body>
-    <h1>Beernoculars</h1>
+    <h1 id="title">Beernoculars</h1>
+    <h2 id="welcome_message">Welcome to Beernoculars, find your nearest brewery</h2>
     <div>
-        <h2>Search Form</h2>
         <!-- insert search form event listener -->
         <form id="search_form">
-            <label>Please Enter Your Address</label><br>
-        
-            <input type="text" id="address_input" placeholder="House number & street name, state, postal code"><br>
+            <label>Please Enter Your Address</label>
+            <p></p>
+            <input type="text" id="address_input" placeholder="house number & street name, state, postal code">
+            <p></p>
             <input type="submit" id="submit_button">
-
-
         </form>
     </div>
-    <div>
+    <div id="breweries_details">
         <h2>Info for nearby breweries</h2>
+        <!-- insert dropdown menu to filter listed breweries -->
         <!-- insert click event to show more details of brewery -->
+        <ol id="brewery_list">
+            
+        </ol>
     </div>
-    <div>
-        <h2>Map</h2>
-        <!-- Insert rollover event listener -->
-    </div>
+    
 
     <script src="./script/index.js"></script>
 </body>

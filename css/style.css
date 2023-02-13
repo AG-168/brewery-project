@@ -1,0 +1,31 @@
+html {
+    background-color : #f28e1c;
+    box-sizing: border-box;
+    border-style: dashed;
+    margin: auto;
+  
+}
+
+h1#title {
+    text-align: center;
+    color: white;
+}
+
+h2#welcome_message {
+    text-align: center;
+    font-size: medium;
+    color: white;
+}
+
+form#search_form {
+    text-align: center;
+}
+
+input#address_input {
+    width: 50%;
+}
+
+div#breweries_details {
+    text-align: center;
+    color: white;
+}
