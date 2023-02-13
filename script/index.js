@@ -9,8 +9,8 @@ function breweryLocation (lat,long) {
             const brewList = document.querySelector('#brewery_list')
             brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
             brewList.append(brewName)
-            
         }
+        console.log(brewerylist)
     })
 }
 
@@ -75,6 +75,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
         return dist*0.621371;
     }
 }
+
 
 
 

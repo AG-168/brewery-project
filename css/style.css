@@ -13,7 +13,6 @@ h1#title {
 
 h2#welcome_message {
     text-align: center;
-    font-size: medium;
     color: white;
 }
 
@@ -30,6 +29,21 @@ div#breweries_details {
     color: white;
 }
 
+div#breweries_details h3 {
+    text-decoration: underline;
+}
+
 ul#brewery_list {
     list-style: none;
+}
+
+img#beer_image {
+    border-radius: 100px;
+    width: auto;
+}
+
+h3#brewery_click_heading {
+    text-align: center;
+    color: white;
+    text-decoration: underline;
 }
