@@ -29,6 +29,10 @@ div#breweries_details {
     color: white;
 }
 
+div#breweries_details h3 {
+    text-decoration: underline;
+}
+
 ul#brewery_list {
     list-style: none;
 }
@@ -41,4 +45,5 @@ img#beer_image {
 h3#brewery_click_heading {
     text-align: center;
     color: white;
+    text-decoration: underline;
 }
