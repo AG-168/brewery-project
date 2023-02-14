@@ -73,6 +73,12 @@ h3#brewery_click_heading {
      linear-gradient(orange 0 0) 0/0% no-repeat
      lightblue;
     animation:p2 2s infinite steps(10);
+    margin:auto;
+    margin-top: 20px;
+    
+    
+
+    
     
   }
   @keyframes p2 {
