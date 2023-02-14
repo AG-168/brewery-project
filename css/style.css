@@ -36,9 +36,19 @@ div#breweries_details h3 {
     text-decoration: underline;
 }
 
-ul#brewery_list {
+li {
     list-style: none;
+    transition: all .2s ease-in-out;
+    
 }
+
+li:hover {
+    transform: scale(1.1); 
+}
+    
+
+
+
 
 img#beer_image {
     display: block;
