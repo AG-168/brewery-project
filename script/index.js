@@ -14,11 +14,8 @@ function breweryLocation (lat,long) {
                 addClickListener(brewerylist[i])
                 
             })
-            
-            
-            //console.log(brewerylist[i])
         }
-        console.log(brewerylist)
+        // console.log(brewerylist)
     })
 }
 
@@ -27,27 +24,28 @@ let brewerylist
 const breweryDetail = document.querySelector("#brewery_click_details")
 let street = document.querySelector("#street")
 let website = document.querySelector("#website")
+let websiteHead = document.querySelector("#website-head")
 let type = document.querySelector("#type")
 
 function addClickListener(brew) {
     street.innerHTML = ''
     website.innerHTML = ''
+    websiteHead.innerHTML = ''
     type.innerHTML = ''
-    street.textContent = brew.street
-    website.textContent = brew.website_url
-    type.textContent = brew.brewery_type
+    street.textContent = `Address: ${brew.street}`
+    website.setAttribute('href', brew.website_url)   
+    website.textContent = brew.website_url 
+    websiteHead.textContent = "Website: "
+    type.textContent = `Type of Brewery: ${brew.brewery_type}`
 }
 
 function querylocation (locationInput) {
     fetch(`https://nominatim.openstreetmap.org/search?q=${locationInput}&format=json&limit=1`)
     .then(res=>res.json())
     .then(data=>{
-        // console.log(data) 
         lat1 = data[0].lat
         lon1 = data[0].lon
         breweryLocation(lat1,lon1)
-        //console.log(lat1)
-        //console.log(lon1)
     })
 }
 
@@ -59,7 +57,10 @@ searchForm.addEventListener('submit', (e)=>{
     let formInput = document.querySelector('#address_input')
     const addressInput = formInput.value
     let breweryUl = document.querySelector('#brewery_list')
-    breweryUl.innerHTML=''
+    breweryUl.innerHTML= ''
+    street.textContent = ''
+    website.textContent = ''
+    type.textContent = ''
     querylocation(addressInput)
 
 })
