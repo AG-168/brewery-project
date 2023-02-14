@@ -74,7 +74,7 @@ h3#brewery_click_heading {
      lightblue;
     animation:p2 2s infinite steps(10);
     margin:auto;
-    margin-top: 20px;
+    margin-top: 15px;
     
     
 
@@ -85,12 +85,20 @@ h3#brewery_click_heading {
       100% {background-size:110%}
   }
 
-  .hide-progress-2 {
-    display: none;
-  }
+
 
 div#brewery_click {
     text-align: center;
     color: white;
+}
+
+.filter-menu {
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+
+    
+    
+
 }
 
