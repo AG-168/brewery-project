@@ -12,22 +12,16 @@ function breweryLocation (lat,long) {
             brewList.append(brewName)
             brewName.addEventListener('click', (e)=>{
                 addClickListener(brewerylist[i])
-
-
-            
             })
             let progress = document.getElementById('progress-2')
             function addClass(className) {
                 progress.classList += className;
-        
             }
             addClass("hide")
-            
         }
          //console.log(brewerylist)
     })
 }
-
 
 let brewerylist
 
@@ -61,7 +55,6 @@ function querylocation (locationInput) {
 
 const searchForm = document.querySelector('#search_form')
 
-
 searchForm.addEventListener('submit', (e)=>{
     e.preventDefault()
     let formInput = document.querySelector('#address_input')
@@ -75,7 +68,6 @@ searchForm.addEventListener('submit', (e)=>{
     querylocation(addressInput)
     
 })
-
 
 function distance(lat1, lon1, lat2, lon2, unit) {
     if ((lat1 == lat2) && (lon1 == lon2)) {
@@ -97,7 +89,6 @@ function distance(lat1, lon1, lat2, lon2, unit) {
         return dist*0.621371;
     }
 }
-
 
 const filter = document.querySelector("#filter")
 filter.addEventListener("change", (event) => {
