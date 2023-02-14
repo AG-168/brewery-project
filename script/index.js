@@ -8,16 +8,13 @@ function breweryLocation (lat,long) {
             const brewdistance = distance(lat1, lon1, brewerylist[i]['latitude'], brewerylist[i]['longitude'], "K").toFixed(2)
             const brewList = document.querySelector('#brewery_list')
             brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
-            
+            brewName.className = brewerylist[i]['brewery_type']
             brewList.append(brewName)
             brewName.addEventListener('click', (e)=>{
                 addClickListener(brewerylist[i])
             })
-            filter.addEventListener("change", (event) => {
-                addDropMenu(event)
-            })
         }
-        // console.log(brewerylist)
+         //console.log(brewerylist)
     })
 }
 
@@ -91,30 +88,69 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
 
 const filter = document.querySelector("#filter")
-function addDropMenu(event) {
+
+filter.addEventListener("change", (event) => {
+    let breweryUl = document.querySelector('#brewery_list')
+
     switch (event.target.value) {
-        case 'micro':
-            console.log('micro')
-        case 'nano':
+        case 'micro': breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'micro') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break    
+        case 'nano': breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'nano') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break    
+        case 'regional':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'regional') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break    
+        case 'brewpub':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'brewpub') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break    
 
-        case 'regional':
+        case 'large':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'large') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'brewpub':
+        case 'planning':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'planning') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'large':
+        case 'bar':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'bar') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'planning':
+        case 'contract':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'contract') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'bar':
+        case 'proprietor':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'proprietor') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'contract':
-
-        case 'proprietor':
-
-        case 'closed':
+        case 'closed':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'closed') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
     }
-}
-
+})
 
 
 
