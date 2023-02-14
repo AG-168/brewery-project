@@ -13,9 +13,8 @@ function breweryLocation (lat,long) {
                 addClickListener(brewerylist[i])
 
             })
-            //console.log(brewerylist[i])
         }
-        console.log(brewerylist)
+        // console.log(brewerylist)
     })
 }
 
@@ -30,21 +29,18 @@ function addClickListener(brew) {
     street.innerHTML = ''
     website.innerHTML = ''
     type.innerHTML = ''
-    street.textContent = brew.street
-    website.textContent = brew.website_url
-    type.textContent = brew.brewery_type
+    street.textContent = `Address: ${brew.street}`
+    website.textContent = `Website: ${brew.website_url}`
+    type.textContent = `Type of Brewery: ${brew.brewery_type}`
 }
 
 function querylocation (locationInput) {
     fetch(`https://nominatim.openstreetmap.org/search?q=${locationInput}&format=json&limit=1`)
     .then(res=>res.json())
     .then(data=>{
-        // console.log(data) 
         lat1 = data[0].lat
         lon1 = data[0].lon
         breweryLocation(lat1,lon1)
-        //console.log(lat1)
-        //console.log(lon1)
     })
 }
 
