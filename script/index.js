@@ -56,7 +56,10 @@ searchForm.addEventListener('submit', (e)=>{
     let formInput = document.querySelector('#address_input')
     const addressInput = formInput.value
     let breweryUl = document.querySelector('#brewery_list')
-    breweryUl.innerHTML=''
+    breweryUl.innerHTML= ''
+    street.textContent = ''
+    website.textContent = ''
+    type.textContent = ''
     querylocation(addressInput)
 
 })
