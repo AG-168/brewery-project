@@ -8,11 +8,14 @@ function breweryLocation (lat,long) {
             const brewdistance = distance(lat1, lon1, brewerylist[i]['latitude'], brewerylist[i]['longitude'], "K").toFixed(2)
             const brewList = document.querySelector('#brewery_list')
             brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
+            
             brewList.append(brewName)
             brewName.addEventListener('click', (e)=>{
                 addClickListener(brewerylist[i])
-
+                
             })
+            
+            
             //console.log(brewerylist[i])
         }
         console.log(brewerylist)
