@@ -8,13 +8,13 @@ function breweryLocation (lat,long) {
             const brewdistance = distance(lat1, lon1, brewerylist[i]['latitude'], brewerylist[i]['longitude'], "K").toFixed(2)
             const brewList = document.querySelector('#brewery_list')
             brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
-            
+            brewName.className = brewerylist[i]['brewery_type']
             brewList.append(brewName)
             brewName.addEventListener('click', (e)=>{
                 addClickListener(brewerylist[i])
             })
         }
-        // console.log(brewerylist)
+         //console.log(brewerylist)
     })
 }
 
@@ -89,26 +89,52 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
 
 const filter = document.querySelector("#filter")
-filter.addEventListener("change", (event) => {
+function addDropMenu(event) {
     switch (event.target.value) {
         case 'micro':
-            console.log(event.target.value)
+            console.log('micro')
         case 'nano':
 
-        case 'regional':
+        case 'large':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'large') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'brewpub':
+        case 'planning':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'planning') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'large':
+        case 'bar':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'bar') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'planning':
+        case 'contract':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'contract') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'bar':
+        case 'proprietor':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'proprietor') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
 
-        case 'contract':
-
-        case 'proprietor':
-
-        case 'closed':
+        case 'closed':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'closed') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break  
     }
-})
+}
+
+
+
+
+
+
