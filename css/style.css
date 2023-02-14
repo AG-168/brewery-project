@@ -79,17 +79,8 @@ h3#brewery_click_heading {
       100% {background-size:110%}
   }
 
-p#street {
+div#brewery_click {
     text-align: center;
     color: white;
 }
 
-p#website {
-    text-align: center;
-    color: white;
-}
-
-p#type {
-    text-align: center;
-    color: white;
-}
