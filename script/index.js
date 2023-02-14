@@ -103,6 +103,18 @@ filter.addEventListener("change", (event) => {
             else {ele.removeAttribute('hidden')}
         })
         break
+        
+        case 'regional':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'regional') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break
+
+        case 'brewpub':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'brewpub') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break
 
         case 'large':breweryUl.childNodes.forEach( (ele) => {
             if (ele.className !== 'large') {ele.setAttribute('hidden', 'hidden')}
