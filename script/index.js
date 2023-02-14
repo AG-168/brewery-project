@@ -23,14 +23,18 @@ let brewerylist
 const breweryDetail = document.querySelector("#brewery_click_details")
 let street = document.querySelector("#street")
 let website = document.querySelector("#website")
+let websiteHead = document.querySelector("#website-head")
 let type = document.querySelector("#type")
 
 function addClickListener(brew) {
     street.innerHTML = ''
     website.innerHTML = ''
+    websiteHead.innerHTML = ''
     type.innerHTML = ''
     street.textContent = `Address: ${brew.street}`
-    website.textContent = `Website: ${brew.website_url}`
+    website.setAttribute('href', brew.website_url)   
+    website.textContent = brew.website_url 
+    websiteHead.textContent = "Website: "
     type.textContent = `Type of Brewery: ${brew.brewery_type}`
 }
 
