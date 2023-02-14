@@ -62,7 +62,6 @@ searchForm.addEventListener('submit', (e)=>{
     websiteHead.textContent = ''
     type.textContent = ''
     querylocation(addressInput)
-
 })
 
 
