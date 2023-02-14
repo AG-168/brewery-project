@@ -85,6 +85,10 @@ h3#brewery_click_heading {
       100% {background-size:110%}
   }
 
+  .hide-progress-2 {
+    display: none;
+  }
+
 div#brewery_click {
     text-align: center;
     color: white;
