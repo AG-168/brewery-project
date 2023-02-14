@@ -13,9 +13,6 @@ function breweryLocation (lat,long) {
             brewName.addEventListener('click', (e)=>{
                 addClickListener(brewerylist[i])
             })
-            filter.addEventListener("change", (event) => {
-                addDropMenu(event)
-            })
         }
         // console.log(brewerylist)
     })
@@ -92,10 +89,10 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
 
 const filter = document.querySelector("#filter")
-function addDropMenu(event) {
+filter.addEventListener("change", (event) => {
     switch (event.target.value) {
         case 'micro':
-            console.log('micro')
+            console.log(event.target.value)
         case 'nano':
 
         case 'regional':
@@ -114,10 +111,4 @@ function addDropMenu(event) {
 
         case 'closed':
     }
-}
-
-
-
-
-
-
+})
