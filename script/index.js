@@ -89,11 +89,21 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
 
 const filter = document.querySelector("#filter")
-function addDropMenu(event) {
+filter.addEventListener("change", (event) => {
+    let breweryUl = document.querySelector("#brewery_list")
+
     switch (event.target.value) {
-        case 'micro':
-            console.log('micro')
-        case 'nano':
+        case 'micro':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'micro') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break
+            
+        case 'nano':breweryUl.childNodes.forEach( (ele) => {
+            if (ele.className !== 'nano') {ele.setAttribute('hidden', 'hidden')}
+            else {ele.removeAttribute('hidden')}
+        })
+        break
 
         case 'large':breweryUl.childNodes.forEach( (ele) => {
             if (ele.className !== 'large') {ele.setAttribute('hidden', 'hidden')}
@@ -131,7 +141,7 @@ function addDropMenu(event) {
         })
         break  
     }
-}
+})
 
 
 
