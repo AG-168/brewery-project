@@ -76,14 +76,14 @@ h3#brewery_click_heading {
     margin:auto;
     margin-top: 15px;
     
-    
-
-    
-    
   }
   @keyframes p2 {
       100% {background-size:110%}
   }
+.hide {
+    display: none;
+}
+
 
 
 

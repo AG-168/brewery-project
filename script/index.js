@@ -12,11 +12,22 @@ function breweryLocation (lat,long) {
             brewList.append(brewName)
             brewName.addEventListener('click', (e)=>{
                 addClickListener(brewerylist[i])
+
+
+            
             })
+            let progress = document.getElementById('progress-2')
+            function addClass(className) {
+                progress.classList += className;
+        
+            }
+            addClass("hide")
+            
         }
          //console.log(brewerylist)
     })
 }
+
 
 let brewerylist
 
@@ -62,6 +73,7 @@ searchForm.addEventListener('submit', (e)=>{
     websiteHead.textContent = ''
     type.textContent = ''
     querylocation(addressInput)
+    
 })
 
 
