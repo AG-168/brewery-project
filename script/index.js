@@ -100,31 +100,33 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
 
 const filter = document.querySelector("#filter")
-
 filter.addEventListener("change", (event) => {
-    let breweryUl = document.querySelector('#brewery_list')
+    let breweryUl = document.querySelector("#brewery_list")
 
     switch (event.target.value) {
-        case 'micro': breweryUl.childNodes.forEach( (ele) => {
+        case 'micro':breweryUl.childNodes.forEach( (ele) => {
             if (ele.className !== 'micro') {ele.setAttribute('hidden', 'hidden')}
             else {ele.removeAttribute('hidden')}
         })
-        break    
-        case 'nano': breweryUl.childNodes.forEach( (ele) => {
+        break
+            
+        case 'nano':breweryUl.childNodes.forEach( (ele) => {
             if (ele.className !== 'nano') {ele.setAttribute('hidden', 'hidden')}
             else {ele.removeAttribute('hidden')}
         })
-        break    
+        break
+        
         case 'regional':breweryUl.childNodes.forEach( (ele) => {
             if (ele.className !== 'regional') {ele.setAttribute('hidden', 'hidden')}
             else {ele.removeAttribute('hidden')}
         })
-        break    
+        break
+
         case 'brewpub':breweryUl.childNodes.forEach( (ele) => {
             if (ele.className !== 'brewpub') {ele.setAttribute('hidden', 'hidden')}
             else {ele.removeAttribute('hidden')}
         })
-        break    
+        break
 
         case 'large':breweryUl.childNodes.forEach( (ele) => {
             if (ele.className !== 'large') {ele.setAttribute('hidden', 'hidden')}
@@ -161,8 +163,14 @@ filter.addEventListener("change", (event) => {
             else {ele.removeAttribute('hidden')}
         })
         break  
+
+        case 'all':breweryUl.childNodes.forEach( (ele) => {
+            ele.removeAttribute('hidden')
+        })
+        break
     }
 })
+
 
 
 
