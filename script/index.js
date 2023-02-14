@@ -139,6 +139,11 @@ filter.addEventListener("change", (event) => {
             else {ele.removeAttribute('hidden')}
         })
         break  
+
+        case 'all':breweryUl.childNodes.forEach( (ele) => {
+            ele.removeAttribute('hidden')
+        })
+        break
     }
 })
 
