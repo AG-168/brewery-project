@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 html {
     background-color : #f28e1c;
     box-sizing: border-box;
@@ -9,11 +10,13 @@ html {
 h1#title {
     text-align: center;
     color: white;
+    font-family: 'Oswald', sans-serif;
 }
 
 h2#welcome_message {
     text-align: center;
     color: white;
+    font-style: italic;
 }
 
 form#search_form {
@@ -39,10 +42,11 @@ ul#brewery_list {
 
 img#beer_image {
     display: block;
-    border-radius: 80px;
-    width: 50%;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 100px;
+    width: auto;
+    
 }
 
 h3#brewery_click_heading {
@@ -50,3 +54,17 @@ h3#brewery_click_heading {
     color: white;
     text-decoration: underline;
 }
+
+.progress-2 {
+    width:120px;
+    height:20px;
+    border-radius: 20px;
+    background:
+     linear-gradient(orange 0 0) 0/0% no-repeat
+     lightblue;
+    animation:p2 2s infinite steps(10);
+    
+  }
+  @keyframes p2 {
+      100% {background-size:110%}
+  }
