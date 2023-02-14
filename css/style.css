@@ -38,8 +38,11 @@ ul#brewery_list {
 }
 
 img#beer_image {
-    border-radius: 100px;
-    width: auto;
+    display: block;
+    border-radius: 80px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h3#brewery_click_heading {
