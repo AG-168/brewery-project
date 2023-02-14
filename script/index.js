@@ -62,6 +62,7 @@ searchForm.addEventListener('submit', (e)=>{
     breweryUl.innerHTML= ''
     street.textContent = ''
     website.textContent = ''
+    websiteHead.textContent = ''
     type.textContent = ''
     querylocation(addressInput)
 
