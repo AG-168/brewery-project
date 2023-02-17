@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body {
+            /* background-image: url('./images/beer.webp'); */
+            /* background-repeat: no-repeat; */
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +17,24 @@
 </head>
 <body>
     <h1 id="title">BEERNOCULARS</h1>
+    
     <div>
-        <img id="beer_image" src="./images/beer.webp"> 
+        <img id="beer_image" src="./images/beer.webp" class="imgBorder"/> 
     </div>
     <h2 id="welcome_message">Welcome to Beernoculars, find your nearest brewery</h2>
     <div>
         <!-- insert search form event listener -->
-        <form id="search_form">
+        <form id="search_form" class="nav-search-box" action="#">
+            <input type="search" id="address_input" name="search" placeholder="Your address here..." />
+            <button id= "submit_button" type="submit">Feeling Thirsty?</button>
+        </form>
+        <!-- <form id="search_form">
             <label>Please Enter Your Address</label>
             <p></p>
-            <input type="text" id="address_input" placeholder="house number & street name, state, postal code">
+            <input type="text" id="address_input" placeholder="Type Your Address">
             <p></p>
             <input type="submit" id="submit_button" value="Feeling Thirsty?"/>
-        </form>
+        </form> -->
     </div>
     <div class="progress-2" id="progress-2">
 
