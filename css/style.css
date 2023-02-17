@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@900&family=Oswald:wght@700&display=swap');
+
 html {
     background-color : #f28e1c;
     box-sizing: border-box;
-    border-style: dashed;
     margin: auto;
+    
   
 }
+
 
 h1#title {
     text-align: center;
     color: white;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Exo 2', sans-serif;
 }
 
 h2#welcome_message {
@@ -21,15 +24,67 @@ h2#welcome_message {
 
 form#search_form {
     text-align: center;
+    margin-top: auto;
+    margin-bottom:auto;
 }
 
-input#address_input {
-    width: 50%;
-}
+.nav-search-box {
+    background-color: orange;
+    width: 70%;
+    /* height: var(--nav-height); */
+    display: grid;
+    grid-template-columns: auto 90px;
+    grid-template-rows: 100%;
+    margin-top: 30px;
+    position: relative;
+    top: 2px;
+    left: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 20px 4px rgba(40, 40, 40, 0.5);
+    border-radius: 8px;
+    transform: translateX(-50%);
+  }
+  
+  .nav-search-box > input[type="search"],
+  .nav-search-box > button {
+    font-family: inherit;
+    width: 100%;
+    /* height: var(--nav-height); */
+    border: 0;
+    outline: 0;
+    display: block;
+  }
+  
+  .nav-search-box > input[type="search"] {
+    background-color: #dedede;
+    padding: 0 15px;
+    transition: all 150ms ease-out;
+  }
+  
+  .nav-search-box > input[type="search"]:focus {
+    background-color: #ffffff;
+  }
+  
+  .nav-search-box > button {
+    color: var(--nav-text-color);
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 150ms ease-out;
+  }
+  
+  .nav-search-box > button:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  
+  .nav-search-box > button:active {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
 
 div#breweries_details {
     text-align: center;
     color: white;
+    
 }
 
 div#breweries_details h3 {
@@ -37,6 +92,47 @@ div#breweries_details h3 {
 }
 
 li {
+    list-style-type: none;
+    padding: 1rem 2rem 1.15rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #ebebeb;
+    min-width: 80px;
+    margin: auto;
+  }
+  
+  li:hover {
+    background: white;
+    /* background-size: 100% 100%; */
+    color: #27262c;
+    animation: spring 300ms ease-out;
+    text-shadow: 0 -1px 0 #ef816c;
+    font-weight: bold;
+    border-radius: 20px;
+  }
+  li:active {
+    transform: translateY(4px);
+  }
+  
+  @keyframes spring {
+    15% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: scale(1.2, 1.1);
+    }
+    40% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: scale(0.95, 0.95);
+    }
+    75% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: scale(1.05, 1);
+    }
+    100% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: scale(1, 1);
+    }
+  }
+/* li {
     list-style: none;
     transition: all .2s ease-in-out;
     
@@ -44,11 +140,8 @@ li {
 
 li:hover {
     transform: scale(1.1); 
-}
+} */
     
-
-
-
 
 img#beer_image {
     display: block;
@@ -56,6 +149,7 @@ img#beer_image {
     margin-right: auto;
     border-radius: 100px;
     width: auto;
+    box-shadow: 0 12px 20px 4px rgba(40, 40, 40, 0.5);
     
 }
 
@@ -75,6 +169,7 @@ h3#brewery_click_heading {
     animation:p2 2s infinite steps(10);
     margin:auto;
     margin-top: 15px;
+    display: none;
     
   }
   @keyframes p2 {
@@ -83,8 +178,6 @@ h3#brewery_click_heading {
 .hide {
     display: none;
 }
-
-
 
 
 div#brewery_click {
@@ -97,8 +190,13 @@ div#brewery_click {
     margin-top: 15px;
     color: white;
 
-    
-    
-
 }
+
+/* .imgBorder {
+    padding: 8px 8px 0;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  } */
 

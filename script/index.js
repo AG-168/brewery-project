@@ -1,3 +1,5 @@
+let progress = document.getElementById('progress-2')
+
 function breweryLocation (lat,long) {
     fetch(`https://api.openbrewerydb.org/breweries?by_dist=${lat},${long}&per_page=5`)
     .then(res => res.json())
@@ -7,20 +9,31 @@ function breweryLocation (lat,long) {
             const brewName = document.createElement("li")
             const brewdistance = distance(lat1, lon1, brewerylist[i]['latitude'], brewerylist[i]['longitude'], "K").toFixed(2)
             const brewList = document.querySelector('#brewery_list')
-            brewName.textContent = `${brewerylist[i]['name']} @ ${brewdistance} miles away`
+            brewName.textContent = `${brewerylist[i]['name']} ${brewdistance} miles away`
             brewName.className = brewerylist[i]['brewery_type']
             brewList.append(brewName)
             brewName.addEventListener('click', (e)=>{
                 addClickListener(brewerylist[i])
+                //removeClass()
+
+
+            
             })
-            let progress = document.getElementById('progress-2')
-            function addClass(className) {
-                progress.classList += className;
-            }
-            addClass("hide")
+            //addClass("hide")
+            
         }
          //console.log(brewerylist)
     })
+}
+function addClass(className) {
+    progress.classList += className;
+
+    
+
+}
+
+function removeClass() {
+    progress.removeProperty('display')
 }
 
 let brewerylist
